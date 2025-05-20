@@ -29,7 +29,6 @@ class ResultActivity : AppCompatActivity() {
 
         resultText.text = "$name, você é como o $hero!"
 
-        // Exibir imagem (coloque imagens em res/drawable com os nomes corretos)
         when (hero) {
             "Homem de Ferro" -> heroImage.setImageResource(R.drawable.ironman)
             "Hulk" -> heroImage.setImageResource(R.drawable.hulk)
@@ -37,7 +36,6 @@ class ResultActivity : AppCompatActivity() {
             "Viúva Negra" -> heroImage.setImageResource(R.drawable.blackwidow)
         }
 
-        // Intent para compartilhar
         shareButton.setOnClickListener {
             val shareIntent = Intent().apply {
                 action = Intent.ACTION_SEND
@@ -47,7 +45,6 @@ class ResultActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
         }
 
-        // Intent para abrir link
         linkButton.setOnClickListener {
             val url = when (hero) {
                 "Homem de Ferro" -> "https://pt.wikipedia.org/wiki/Homem_de_Ferro"
